@@ -1,4 +1,13 @@
-#include "get_next_line.h"
+
+
+int ft_checkerror(fd, **line)
+{
+    if(fd < 1 || line == NULL)
+        return(-1);
+    if(!(*line = (char*)malloc(sizeof(char) * (BUFF_SIZE + 1))))
+        return(-1);
+    return(0);
+}
 
 int main()
 {

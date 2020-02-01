@@ -1,5 +1,2 @@
 Hola
-ceci
-est
-un
-test
+Ceci
