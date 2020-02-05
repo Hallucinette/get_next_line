@@ -61,6 +61,25 @@ int		ft_strchr(const char *s, int c)
 	return (-1);
 }
 
+char	*ft_strdup(const char *s1)
+{
+	int		i;
+	char	*dest;
+	char	*src;
+
+	i = 0;
+	src = (char *)s1;
+	if (!(dest = malloc(sizeof(*src) * (ft_strlen(src) + 1))))
+		return (0);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

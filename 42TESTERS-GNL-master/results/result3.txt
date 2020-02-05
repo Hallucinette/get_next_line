@@ -1,0 +1,262 @@
+
+==========================================
+========== TEST 1 : The Alphabet =========
+==========================================
+
+line = AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+line = BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBb
+|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBb
+line = CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc
+line = DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDd
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDd
+line = EEEEEEEEEEEEEEEEEEEEEEEEEEEEEe
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEe
+line = FFFFFFFFFFFFFFFFFFFFFFFFFFFFf
+|FFFFFFFFFFFFFFFFFFFFFFFFFFFFf
+line = GGGGGGGGGGGGGGGGGGGGGGGGGGGg
+|GGGGGGGGGGGGGGGGGGGGGGGGGGGg
+line = HHHHHHHHHHHHHHHHHHHHHHHHHHh
+|HHHHHHHHHHHHHHHHHHHHHHHHHHh
+line = IIIIIIIIIIIIIIIIIIIIIIIIIi
+|IIIIIIIIIIIIIIIIIIIIIIIIIi
+line = JJJJJJJJJJJJJJJJJJJJJJJJj
+|JJJJJJJJJJJJJJJJJJJJJJJJj
+line = KKKKKKKKKKKKKKKKKKKKKKKk
+|KKKKKKKKKKKKKKKKKKKKKKKk
+line = LLLLLLLLLLLLLLLLLLLLLLl
+|LLLLLLLLLLLLLLLLLLLLLLl
+line = MMMMMMMMMMMMMMMMMMMMMm
+|MMMMMMMMMMMMMMMMMMMMMm
+line = NNNNNNNNNNNNNNNNNNNNn
+|NNNNNNNNNNNNNNNNNNNNn
+line = OOOOOOOOOOOOOOOOOOOo
+|OOOOOOOOOOOOOOOOOOOo
+line = PPPPPPPPPPPPPPPPPPp
+|PPPPPPPPPPPPPPPPPPp
+line = QQQQQQQQQQQQQQQQQq
+|QQQQQQQQQQQQQQQQQq
+line = RRRRRRRRRRRRRRRRr
+|RRRRRRRRRRRRRRRRr
+line = SSSSSSSSSSSSSSSs
+|SSSSSSSSSSSSSSSs
+line = TTTTTTTTTTTTTTt
+|TTTTTTTTTTTTTTt
+line = UUUUUUUUUUUUUu
+|UUUUUUUUUUUUUu
+line = VVVVVVVVVVVVv
+|VVVVVVVVVVVVv
+line = WWWWWWWWWWWw
+|WWWWWWWWWWWw
+line = XXXXXXXXXXx
+|XXXXXXXXXXx
+line = YYYYYYYYYy
+|YYYYYYYYYy
+line = ZZZZZZZZz
+|ZZZZZZZZz
+line = AAAAAAAa
+|AAAAAAAa
+line = BBBBBBb
+|BBBBBBb
+line = CCCCCc
+|CCCCCc
+line = DDDDd
+|DDDDd
+line = EEEe
+|EEEe
+line = FFf
+|FFf
+line = Gg
+|Gg
+line = h
+|h
+line = Ii
+|Ii
+line = JJj
+|JJj
+line = KKKk
+|KKKk
+line = LLLLl
+|LLLLl
+line = MMMMMm
+|MMMMMm
+line = NNNNNNn
+|NNNNNNn
+line = OOOOOOOo
+|OOOOOOOo
+line = PPPPPPPPp
+|PPPPPPPPp
+line = QQQQQQQQQq
+|QQQQQQQQQq
+line = RRRRRRRRRRr
+|RRRRRRRRRRr
+line = SSSSSSSSSSSs
+|SSSSSSSSSSSs
+line = TTTTTTTTTTTTt
+|TTTTTTTTTTTTt
+line = UUUUUUUUUUUUUu
+|UUUUUUUUUUUUUu
+line = VVVVVVVVVVVVVVv
+|VVVVVVVVVVVVVVv
+line = WWWWWWWWWWWWWWWw
+|WWWWWWWWWWWWWWWw
+line = XXXXXXXXXXXXXXXXx
+|XXXXXXXXXXXXXXXXx
+line = YYYYYYYYYYYYYYYYYy
+|YYYYYYYYYYYYYYYYYy
+line = ZZZZZZZZZZZZZZZZZZz
+|ZZZZZZZZZZZZZZZZZZz
+line = AAAAAAAAAAAAAAAAAAAa
+|AAAAAAAAAAAAAAAAAAAa
+line = BBBBBBBBBBBBBBBBBBBBb
+|BBBBBBBBBBBBBBBBBBBBb
+line = CCCCCCCCCCCCCCCCCCCCCc
+|CCCCCCCCCCCCCCCCCCCCCc
+line = DDDDDDDDDDDDDDDDDDDDDDd
+|DDDDDDDDDDDDDDDDDDDDDDd
+line = EEEEEEEEEEEEEEEEEEEEEEEe
+|EEEEEEEEEEEEEEEEEEEEEEEe
+line = FFFFFFFFFFFFFFFFFFFFFFFFf
+|FFFFFFFFFFFFFFFFFFFFFFFFf
+line = GGGGGGGGGGGGGGGGGGGGGGGGGg
+|GGGGGGGGGGGGGGGGGGGGGGGGGg
+line = HHHHHHHHHHHHHHHHHHHHHHHHHHh
+|HHHHHHHHHHHHHHHHHHHHHHHHHHh
+line = IIIIIIIIIIIIIIIIIIIIIIIIIIIi
+|IIIIIIIIIIIIIIIIIIIIIIIIIIIi
+line = JJJJJJJJJJJJJJJJJJJJJJJJJJJJj
+|JJJJJJJJJJJJJJJJJJJJJJJJJJJJj
+line = KKKKKKKKKKKKKKKKKKKKKKKKKKKKKk
+|KKKKKKKKKKKKKKKKKKKKKKKKKKKKKk
+line = LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLl
+|LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLl
+line = MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm
+|MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm
+line = NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
+|NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
+
+Right number of lines
+
+==========================================
+========= TEST 2 : Empty Lines ===========
+==========================================
+
+line = NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnCette ligne se termine par un point.
+|NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnCette ligne se termine par un point.
+line = La ligne suivante est vide.
+|La ligne suivante est vide.
+line = 
+|
+
+Not Good - Wrong Number Of Lines
+
+==========================================
+======== TEST 3 : The Empty File =========
+==========================================
+
+line = 
+|
+
+Right number of lines
+
+==========================================
+========= TEST 4 : One New Line ==========
+==========================================
+
+line = 
+|
+line = 
+|
+
+Right number of lines
+
+==========================================
+========= TEST 5 : Four New Lines ========
+==========================================
+
+line = 
+|
+line = 
+|
+
+Not Good - Wrong Number Of Lines
+
+==========================================
+============== TEST 6 : 42 ===============
+==========================================
+
+line = 
+|
+line = answer to life the universe and everything
+|answer to life the universe and everything
+line = answer to life the universe and everythinganswer to life the universe and everything-
+|answer to life the universe and everythinganswer to life the universe and everything-
+
+Right number of lines
+
+==========================================
+============= TEST 7 : Marge =============
+==========================================
+
+line = answer to life the universe and everythinganswer to life the universe and everything-   OOOO
+answer to life the universe and everythinganswer to life the universe and everything-   OOOO
+line =  OOOOOOOOO
+ OOOOOOOOO
+line = OOOOOOOOOOOO
+OOOOOOOOOOOO
+line = OOOOOOOOOOOOO
+OOOOOOOOOOOOO
+line = OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+line = OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+line =  OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+line =  OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+line =  OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+line =   OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+line =   OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+line =   
+line =     OOOOOOOOOOOOOO
+    OOOOOOOOOOOOOO
+line =   OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+line =    OOOOOOOOOOOOOO
+   OOOOOOOOOOOOOO
+line =    OOOOOOOOOOOOOO
+   OOOOOOOOOOOOOO
+line =    OOOOO \_| \_|O
+   OOOOO \_| \_|O
+line =    OOOO \/  \/  \
+   OOOO \/  \/  \
+line =    OOOO (o   )o  )
+   OOOO (o   )o  )
+line =    O/c   \__/ --.
+   O/c   \__/ --.
+line =    O\_   ,     -'
+   O\_   ,     -'
+line =     O|  '\_______)
+    O|  '\_______)
+line =      |       _)
+     |       _)
+line =      |      |
+     |      |
+line =      oooooooo
+     oooooooo
+line =     /        \
+    /        \
+
+Right number of lines
+
+==========================================
+========= TEST 8 : Wrong Input ===========
+==========================================
+
+line =     /        \
+Well Done, you return -1 if no FD
+

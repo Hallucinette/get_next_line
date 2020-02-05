@@ -1,15 +1,5 @@
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 int get_next_line(int fd, char **line)
 {
     static char *tmp[4096];
@@ -35,7 +25,7 @@ int get_next_line(int fd, char **line)
      }
     else  
         *line = ft_substr(*tmp, 0, ft_strlen(*tmp));
-    printf("line = %s\n", *line);
+         printf("line = %s\n", *line);
      return (nb_char);
 }
 
