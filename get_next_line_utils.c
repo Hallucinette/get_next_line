@@ -26,7 +26,7 @@ static char	*ft_strcat(char *str1, char *str2)
 	return (str1);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoinf(char const *s1, char const *s2)
 {
 	int		i;
 	int		total_size;
@@ -45,7 +45,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
-int		ft_strchr(const char *s, int c)
+int		ft_instrchr(const char *s, int c)
 {
 	int		i;
 	char	*str;
@@ -85,5 +85,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 	}
 	dst[i] = '\0';
+	// free((char *)s);
 	return (dst);
 }
