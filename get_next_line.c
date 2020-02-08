@@ -27,7 +27,8 @@ int get_next_line(int fd, char **line)
     int len;
     char *save;
 
-    if (fd < 0 || line == NULL || BUFFER_SIZE <= 0)
+    if (fd < 0 || line == NULL || BUFFER_SIZE <= 0
+        || read(fd, buffer, 0) < 0)
         return(-1);
     if (tmp == NULL)
         if (!(tmp = ft_strdup("")))
@@ -38,6 +39,8 @@ int get_next_line(int fd, char **line)
         buffer[nb_char] = '\0';
         tmp = ft_strjoinf(tmp, buffer);
     }
+    // if (nb_char == -1)
+    //     return(-1);
     if (len != -1)
     {
         *line = ft_substr(tmp, 0, len);
