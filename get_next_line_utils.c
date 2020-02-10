@@ -85,6 +85,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 	}
 	dst[i] = '\0';
-	// free((char *)s);
 	return (dst);
 }
