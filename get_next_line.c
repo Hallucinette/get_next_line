@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amepocch <amepocch@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/13 22:03:02 by amepocch          #+#    #+#             */
+/*   Updated: 2020/02/13 22:05:42 by amepocch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *s1)
+char		*ft_strdup(const char *s1)
 {
 	int		i;
 	char	*dest;
@@ -18,66 +30,42 @@ char	*ft_strdup(const char *s1)
 	dest[i] = '\0';
 	return (dest);
 }
-char *ft_savelastline(char **line, char **tmp, int len)
+
+char		*ft_savelastline(char **line, char **tmp, int len)
 {
-    char *save;
-    *line = ft_substr(*tmp, 0, len);
-    save = *tmp;
-    *tmp = ft_substr(save, len + 1, ft_strlen(save));
-    free(save);
-    return(*tmp);
+	char	*save;
+
+	*line = ft_substr(*tmp, 0, len);
+	save = *tmp;
+	*tmp = ft_substr(save, len + 1, ft_strlen(save));
+	free(save);
+	return (*tmp);
 }
-/* char *ft_savelastline(char **line, char **tmp, int len)
+
+int			get_next_line(int fd, char **line)
 {
-    char *save;
+	static char	*tmp[4096];
+	char		buffer[BUFFER_SIZE + 1];
+	int			nb_char;
+	int			len;
 
-    *line = ft_substr(*tmp, 0, len);
-    save = ft_strdup(*tmp);
-    free(*tmp);
-    *tmp = ft_substr(save, len + 1, ft_strlen(save));
-    free(save);
-    return(*tmp);
-}*/
-
-int get_next_line(int fd, char **line)
-{
-    static char *tmp;
-    char buffer[BUFFER_SIZE + 1];
-    int nb_char;
-    int len;
-
-    if (fd < 0 || line == NULL || BUFFER_SIZE <= 0
-        || read(fd, buffer, 0) < 0)
-        return(-1);
-    if (tmp == NULL)
-        if (!(tmp = ft_strdup("")))
-            return(-1);
-    while(((len = ft_instrchr(tmp, '\n')) == -1) && 
-          (nb_char = read(fd, buffer, BUFFER_SIZE)) > 0)
-    {    
-        buffer[nb_char] = '\0';
-        tmp = ft_fstrjoin(tmp, buffer);
-    }
-    if (len != -1)
-    {
-       if ((ft_savelastline(line, &tmp, len)) == NULL)
-            return (-1);
-    //printf("line = %s\n\n\n", *line);
-     }
-    else  
-    {
-        *line = tmp;    
-        nb_char = 0;
-        //free(tmp);
-    }
-    if (nb_char >= 1)
-        nb_char = 1;
-     printf("line = %s\n\n", *line);
-    //printf("len = %d\n", len);
-
-
-
-    //      printf("nb_char = %d\n", nb_char);
-    //  printf("tmp = %s\n", tmp);
-    return(nb_char);
+	if (fd < 0 || line == NULL || BUFFER_SIZE <= 0)
+		return (-1);
+	if (tmp[fd] == NULL)
+		if (!(tmp[fd] = ft_strdup("")))
+			return (-1);
+	while (((len = ft_instrchr(tmp[fd], '\n')) == -1) &&
+			(nb_char = read(fd, buffer, BUFFER_SIZE)) > 0)
+	{
+		buffer[nb_char] = '\0';
+		tmp[fd] = ft_fstrjoin(tmp[fd], buffer);
+	}
+	if (len != -1)
+		ft_savelastline(line, &tmp[fd], len);
+	else
+	{
+		*line = tmp[fd];
+		return (0);
+	}
+	return (1);
 }

@@ -11,7 +11,7 @@
 	{
 		// printf("\nlen = %d\n", len);
         // printf("tmp = %s\n", tmp);
-       // printf("line = %s\n", line);
+        //printf("line = %s\n", line);
 		 free(line);
         // printf("nb_char = %d\n", nb_char);
 	}
