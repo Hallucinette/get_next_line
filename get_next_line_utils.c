@@ -26,7 +26,7 @@ static char	*ft_strcat(char *str1, char *str2)
 	return (str1);
 }
 
-char		*ft_strjoinf(char const *s1, char const *s2)
+char		*ft_fstrjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		total_size;

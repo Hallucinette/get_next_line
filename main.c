@@ -5,8 +5,8 @@
 	int		fd;
 	char	*line;
 	int ret;
-	fd = open("test.txt", O_RDONLY);
-	//fd = open("fd.txt", O_RDONLY);
+	//fd = open("test.txt", O_RDONLY);
+	fd = open("fd.txt", O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) > 0)
 	{
 		// printf("\nlen = %d\n", len);

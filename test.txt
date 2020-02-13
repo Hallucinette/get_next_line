@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-hello
-
-
-vgvgvg
-
-salut
-=======
-                 salut
->>>>>>> 709cbab8dc83f96f7171b3092e046a308191713c
-je m'appelle
+je
+m'appelle
 Amelie
-fin
