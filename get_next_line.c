@@ -18,8 +18,16 @@ char	*ft_strdup(const char *s1)
 	dest[i] = '\0';
 	return (dest);
 }
-
 char *ft_savelastline(char **line, char **tmp, int len)
+{
+    char *save;
+    *line = ft_substr(*tmp, 0, len);
+    save = *tmp;
+    *tmp = ft_substr(save, len + 1, ft_strlen(save));
+    free(save);
+    return(*tmp);
+}
+/* char *ft_savelastline(char **line, char **tmp, int len)
 {
     char *save;
 
@@ -29,7 +37,7 @@ char *ft_savelastline(char **line, char **tmp, int len)
     *tmp = ft_substr(save, len + 1, ft_strlen(save));
     free(save);
     return(*tmp);
-}
+}*/
 
 int get_next_line(int fd, char **line)
 {
@@ -37,7 +45,6 @@ int get_next_line(int fd, char **line)
     char buffer[BUFFER_SIZE + 1];
     int nb_char;
     int len;
-    // char *save;
 
     if (fd < 0 || line == NULL || BUFFER_SIZE <= 0
         || read(fd, buffer, 0) < 0)
@@ -55,19 +62,22 @@ int get_next_line(int fd, char **line)
     {
        if ((ft_savelastline(line, &tmp, len)) == NULL)
             return (-1);
-    // ft_savelastline(line, &tmp, len);
+    //printf("line = %s\n\n\n", *line);
      }
     else  
     {
         *line = tmp;    
         nb_char = 0;
+        //free(tmp);
     }
     if (nb_char >= 1)
         nb_char = 1;
+     printf("line = %s\n\n", *line);
+    //printf("len = %d\n", len);
+
+
 
     //      printf("nb_char = %d\n", nb_char);
-    //      printf("\nlen = %d\n", len);
     //  printf("tmp = %s\n", tmp);
-    //  printf("line = %s\n\n\n", *line);
     return(nb_char);
 }
