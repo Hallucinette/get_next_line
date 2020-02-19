@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:13 by mchardin          #+#    #+#             */
-/*   Updated: 2019/12/15 17:19:49 by mchardin         ###   ########.fr       */
+/*   Updated: 2020/02/19 04:09:47 by amepocch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,15 @@ int main()
 		printf("\nError in open\n");
 		return (0);
 	}
+	printf("PASA 1 CON LINE addr: %p Y CONTENT: %s CON CHAR 0: %c \n", line, line, *line);
 	while ((i = get_next_line(fd, &line)) > 0)
 	{
+		printf("PASA 2 \n");
 		printf("|%s\n", line);
 		free(line);
 		j++;
 	}
+	printf("PASA 3 \n");
 	printf("|%s\n", line);
 	free(line);
 	close(fd);
