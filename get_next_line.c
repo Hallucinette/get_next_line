@@ -1,74 +1,79 @@
 #include "get_next_line.h"
 
-static char		*ft_del(char *ptr)
+char		*ft_strdup(const char *s1)
 {
-	if (ptr)
+	int		i;
+	char	*dest;
+	char	*src;
+
+	i = 0;
+	src = (char *)s1;
+	if (!(dest = malloc(sizeof(*src) * (ft_strlen(src) + 1))))
+		return (0);
+	while (src[i])
 	{
-		free(ptr);
-		ptr = NULL;
+		dest[i] = src[i];
+		i++;
 	}
-	return (ptr);
+	dest[i] = '\0';
+	return (dest);
 }
 
-static int		ft_return(int rret, char **line)
+char		*ft_saveline(char **line, char **tmp, int len)
 {
-	if (rret < 0)
+	char	*save;
+
+	*line = ft_substr(*tmp, 0, len);
+	save = *tmp;
+	*tmp = ft_substr(save, len + 1, ft_strlen(save));
+	free(save);
+	return (*tmp);
+}
+
+int			ft_check_error(int fd, char **line, char **tmp)
+{
+	if (fd < 0 || BUFFER_SIZE < 1 || line == NULL)
 		return (-1);
-	*line = ft_strdup("");
+	if (*tmp == NULL)
+	{
+		if (!(*tmp = ft_strdup("")))
+			return (-1);
+	}
+	return (1);
+}
+
+int			ft_free(char **line, char **tmp)
+{
+	*line = *tmp;
+	*tmp = NULL;
+	free(*tmp);
 	return (0);
 }
 
-static char		*ft_line(char *cached, char **line, int *rret)
+int			get_next_line(int fd, char **line)
 {
-	int		pos;
-	char	*temp;
+	static char	*tmp[4096];
+	char		buffer[BUFFER_SIZE + 1];
+	int			nb_char;
+	int			len;
 
-	pos = 0;
-	while (cached[pos] != '\n' && cached[pos] != '\0')
-		pos++;
-	if (cached[pos] == '\n')
+	if ((ft_check_error(fd, line, &tmp[fd])) == -1)
+		return (-1);
+	while (((len = ft_instrchr(tmp[fd], '\n')) == -1) &&
+			(nb_char = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
-		*line = ft_substr(cached, 0, pos);
-		temp = ft_strdup(cached + (pos + 1));
-		free(cached);
-		cached = temp;
-		if (cached[0] == '\0')
-			cached = ft_del(cached);
-		*rret = 1;
+		buffer[nb_char] = '\0';
+		tmp[fd] = ft_fstrjoin(tmp[fd], buffer);
 	}
+	if (nb_char == -1)
+		if ((ft_free(line, &tmp[fd])) == 0)
+			return (-1);
+	if (len != -1)
+		ft_saveline(line, &tmp[fd], len);
 	else
 	{
-		*line = ft_strdup(cached);
-		free(cached);
-		cached = NULL;
-		*rret = 0;
+		if ((ft_free(line, &tmp[fd])) == 0)
+			return (0);
 	}
-	return (cached);
-}
-
-int				get_next_line(int fd, char **line)
-{
-	static char *cached[4096];
-	char		*buff;
-	int			rret;
-
-	if (fd < 0 || line == NULL || BUFFER_SIZE < 1)
-		return (-1);
-	if (!(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
-		return (-1);
-	while ((rret = read(fd, buff, BUFFER_SIZE)) > 0)
-	{
-		buff[rret] = '\0';
-		if (cached[fd] == NULL)
-			cached[fd] = ft_strdup(buff);
-		else
-			cached[fd] = ft_strjoin(cached[fd], buff);
-		if (ft_strchr(cached[fd], '\n'))
-			break ;
-	}
-	free(buff);
-	if ((rret < 0) || (rret == 0 && cached[fd] == NULL))
-		return (ft_return(rret, line));
-	cached[fd] = ft_line(cached[fd], line, &rret);
-	return (rret);
+	return (1);
 }
